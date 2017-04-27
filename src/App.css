@@ -51,6 +51,10 @@ body {
   background: #A7A37E;
 }
 
+.Pane {
+  overflow: auto;
+}
+
 .Resizer.vertical {
   width: 5px;
   /*margin: 0 -5px;
