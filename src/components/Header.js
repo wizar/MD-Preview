@@ -6,7 +6,7 @@ import FontAwesome from 'react-fontawesome';
 class Header extends Component {
     render() {
         return (
-            <div className="header">
+            <div className="header boundary">
                 <span className="title">Markdown preview demo</span>
                 <span className="buttons">
                 <Menu />
