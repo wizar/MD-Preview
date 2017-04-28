@@ -19,7 +19,6 @@ class SettingsStore extends EventEmmiter {
     onAction(action) {
         switch (action.type) {
             case 'RESIZE': {
-                console.log('Action resize', action.payload);
                 this.size = action.payload;
                 this.emit('change');
                 break;
@@ -32,6 +31,7 @@ class SettingsStore extends EventEmmiter {
                 }
 
                 this.emit('change');
+                break;
             }
             default: {
                 console.error('Unexcepted action!', action);
