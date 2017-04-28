@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 
+import Menu from './Menu';
+import FontAwesome from 'react-fontawesome';
+
 class Header extends Component {
     render() {
         return (
             <div className="header">
-                Markdown preview demo
+                <span className="title">Markdown preview demo</span>
+                <span className="buttons">
+                <Menu />
+                </span>
             </div>
         );
     }

@@ -6,3 +6,9 @@ export function resize(newSize) {
         payload: newSize
     });
 }
+
+export function switchLayout() {
+    AppDispatcher.dispatch({
+        type: 'SWITCH_LAYOUT'
+    });
+}

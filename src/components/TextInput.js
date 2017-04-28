@@ -48,7 +48,7 @@ class TextInput extends Component {
       className="inputText"
       mode="markdown"
       fontSize={16}
-      width="auto"
+      width="100%"
       height="100%"
       theme="chrome"
       wrapEnabled={true}

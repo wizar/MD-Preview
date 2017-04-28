@@ -5,10 +5,15 @@ class SettingsStore extends EventEmmiter {
     constructor() { 
         super();
         this.size = null;
+        this.layout = 'vertical';
     }
 
     getSize() {
         return this.size;
+    }
+
+    getLayout() {
+        return this.layout;
     }
 
     onAction(action) {
@@ -18,6 +23,15 @@ class SettingsStore extends EventEmmiter {
                 this.size = action.payload;
                 this.emit('change');
                 break;
+            }
+            case 'SWITCH_LAYOUT': {
+                if (this.layout === 'vertical') {
+                    this.layout = 'horizontal';
+                } else {
+                    this.layout = 'vertical';
+                }
+
+                this.emit('change');
             }
             default: {
                 console.error('Unexcepted action!', action);
