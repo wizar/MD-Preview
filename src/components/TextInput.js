@@ -3,6 +3,7 @@ import AceEditor from 'react-ace';
 
 import * as TextActions from '../actions/TextActions';
 import TextStore from '../stores/TextStore';
+import SettingsStore from '../stores/SettingsStore';
 
 import 'brace/mode/markdown';
 import 'brace/theme/chrome';
@@ -18,15 +19,15 @@ class TextInput extends Component {
   }
 
   componentWillUnmount() {
-    TextStore.removeListener('change', this.resizeEditor);
+    SettingsStore.removeListener('change', this.resizeEditor);
   }
   
   componentDidMount() {
-    TextStore.on('change', this.resizeEditor);
+    SettingsStore.on('change', this.resizeEditor);
   }
   
   resizeEditor = () => {
-    const size = TextStore.getWrapLimit();
+    const size = SettingsStore.getSize();
     if (size !== this.state.size) {
       this.setState({ size });
       this.state.editor.resize(true);

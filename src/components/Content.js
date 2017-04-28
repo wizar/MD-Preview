@@ -3,12 +3,12 @@ import SplitPane from 'react-split-pane';
 
 import TextInput from './TextInput';
 import Render from './Render';
-import * as TextActions from '../actions/TextActions';
+import * as SettingsActions from '../actions/SettingsActions';
 
 class Content extends Component {
 
     notifyResize(size) {
-        TextActions.updateWidth(size);
+        SettingsActions.resize(size);
     }
 
     render() {
